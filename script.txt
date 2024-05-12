@@ -1,0 +1,14 @@
+create table categoria(
+id_categoria int primary key,
+nombre varchar(40),
+descripcion varchar(50));
+create table producto(
+id_producto int primary key default,
+nombre varchar(40),
+precio decimal(10,2),
+stock int,
+id_categoria int,
+foreign key (id_categoria) references  categoria(id_categoria));
+
+insert into categoria(id_categoria,nombre,descripcion) values(1,'lacteos','leche');
+insert into categoria values(2,'lacteos','queso');
